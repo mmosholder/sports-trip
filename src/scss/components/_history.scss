@@ -1,0 +1,118 @@
+.history {
+
+  h2,
+  p,
+  .-sub {
+    color: $text-darkest;
+  }
+
+  .-sub,
+  .-blue {
+    @include text-sub;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    span {
+      @include title-secondary;
+      @include text-heavy-underline;
+    }
+  }
+
+  p,
+  .-description {
+    @include text-paragraph;
+  }
+
+  .-description {
+    color: $text-dark;
+
+    @include mq($from: $breakpoint-medium) {
+      padding-right: pxem(15);
+    }
+  }
+
+  .-title {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  .-entry {
+    @include col(12);
+    display: flex;
+
+    &:last-of-type {
+      .-step:after {
+        display: none;
+      }
+    }
+  }
+
+  .-blue {
+    @include span(2);
+    color: $brand-blue;
+    text-align: right;
+    padding-top: pxem(10);
+
+    @include mq($from: $breakpoint-medium) {
+      @include offset(2);
+      @include col(2);
+    }
+  }
+
+  .-step {
+    @include span(2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: pxem(10);
+
+    &:after {
+      content: "";
+      height: calc(100% - 20px);
+      width: 1px;
+      background-color: $color-gray;
+      position: absolute;
+      top: 30px;
+      left:48%;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(1);
+      margin-top: 0;
+
+      &:after {
+        top: 50px;
+        height: calc(100% - 50px);
+      }
+    }
+
+    span {
+      width: pxem(30);
+      height: pxem(30);
+      border: 1px solid $color-gray;
+      border-radius: 50%;
+      display: flex;
+
+      @include mq($from: $breakpoint-medium) {
+        width: pxem(50);
+        height: pxem(50);
+      }
+    }
+  }
+
+  .-text {
+    @include span(8);
+    padding-bottom: pxem(60);
+    padding-top: pxem(10);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+    }
+  }
+
+}

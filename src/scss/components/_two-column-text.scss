@@ -1,0 +1,36 @@
+.two-column-text {
+  h2,
+  p {
+    color: $text-darkest;
+  }
+
+  h2 {
+    @include text-sub;
+    text-transform: uppercase;
+  }
+
+  p {
+    @include text-paragraph;
+  }
+
+  .-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  .-col {
+    @include col(12);
+    margin-bottom: pxem(60);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+    }
+  }
+}

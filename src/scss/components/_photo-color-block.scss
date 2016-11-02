@@ -1,0 +1,82 @@
+.photo-color {
+  margin-bottom: pxem(60);
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .-photo {
+    @include span(12);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: pxem(250);
+
+    @include mq($from: $breakpoint-medium) {
+      @include span(5);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  h2,
+  p,
+  a {
+    color: $text-white;
+  }
+
+  .-color {
+    @include span(12);
+    background-color: $brand-blue;
+
+    @include mq($from: $breakpoint-medium) {
+      @include span(7);
+    }
+  }
+
+  .-text {
+    padding: pxem(20) pxem(25) pxem(70) pxem(25);
+
+    h2 {
+
+      span {
+        @include title-secondary;
+        @include text-heavy-underline;
+      }
+    }
+
+    p {
+      @include text-paragraph;
+    }
+
+    a {
+      @include link-sub;
+      text-transform: uppercase;
+      transition: color 240ms $t-1;
+
+      svg {
+        margin: pxem(-2) 0 0 pxem(10);
+
+
+        path {
+          transition: fill 240ms $t-1;
+        }
+      }
+
+      &:hover {
+        color: darken($color-white, 15%);
+
+        svg path {
+          fill: darken($color-white, 15%)
+        }
+      }
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include offset(1);
+      padding: pxem(60) 0 pxem(60) 0;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.-illustration {
+  border-bottom: 4.5px solid #2082DF;
+
+  @include mq($from: 600px) {
+    text-align: right;
+  }
+
+  img {
+    margin-bottom: pxem(-4);
+
+    @include mq($from: 700px) {
+      width: pxem(600);
+    }
+  }
+}
+
+.footer {
+  background-color: $footer-bg;
+  clear: both;
+
+  h2 {
+    @include sentinel-book;
+    font-size: pxem(25);
+    color: $color-white;
+    text-align: center;
+    padding: 0 pxem(5);
+    margin: 0 0 pxem(70) 0;
+  }
+
+  span,
+  a {
+    @include link-footer;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  a:hover {
+    color: darken($color-white, 15%)
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: pxem(5) 0;
+      display: block;
+
+      @include mq($from: $breakpoint-medium) {
+        display: inline-block;
+
+        &:last-of-type {
+          a:after {
+            content: "";
+          }
+        }
+      }
+
+      a {
+        padding: pxem(5) 0;
+        display: block;
+
+        @include mq($from: $breakpoint-medium) {
+          &:after {
+            content: "|";
+            color: $color-white;
+            margin: 0 pxem(5);
+          }
+        }
+      }
+    }
+  }
+
+  .-container {
+    @include container($type: 'footer');
+    padding-top: pxem(75);
+    padding-bottom: pxem(75);
+  }
+
+  .-links {
+    margin-bottom: pxem(60);
+    position: relative;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+      margin-bottom: 0;
+    }
+  }
+
+  .-sub-links {
+    margin: 0 0 0 pxem(15);
+
+    @include mq($from: $breakpoint-medium) {
+      display: inline-block;
+      position: absolute;
+      top: pxem(35);
+      left: pxem(5);
+    }
+  }
+
+  .-info {
+    margin-bottom: pxem(35);
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+    }
+
+    .-col {
+      @include col(6);
+      align-self: flex-end;
+
+      span {
+        display: block;
+        padding: pxem(4) 0;
+      }
+    }
+  }
+
+  .-social {
+    @include col(6);
+
+    @include mq($from: $breakpoint-medium) {
+      margin-top: pxem(-100);
+    }
+
+    a {
+      margin: pxem(3) 0;
+      padding: pxem(3) 0;
+      display: block;
+    }
+
+    img {
+      width: auto;
+      margin: 0 pxem(15) 0 0;
+    }
+  }
+
+  .-bottom {
+    text-align: center;
+    border-top: 1px solid #D8D8D8;
+    padding: pxem(30) 0;
+    @include container($type: 'footer');
+  }
+}

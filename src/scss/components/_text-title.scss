@@ -1,0 +1,27 @@
+.text-title {
+
+  h2,
+  p {
+    color: $text-darkest;
+  }
+
+  h2 {
+    span {
+      @include title-secondary;
+      @include text-heavy-underline;
+    }
+  }
+
+  p {
+    @include text-paragraph;
+  }
+
+  .-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+}

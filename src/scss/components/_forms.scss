@@ -1,0 +1,117 @@
+.form {
+
+  label,
+  input[type="text"],
+  input[type="email"],
+  p,
+  h2 {
+    color: $text-darkest;
+  }
+
+  h2 span {
+    @include title-secondary;
+    @include text-heavy-underline;
+  }
+
+  label {
+    @include text-sub;
+    text-transform: uppercase;
+  }
+
+  p,
+  input[type="text"],
+  input[type="email"] {
+    @include text-paragraph;
+  }
+
+  .-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  .-title {
+    margin-bottom: pxem(75);
+  }
+}
+
+form {
+  @include span(12);
+
+  label,
+  input[type="text"],
+  input[type="email"],
+  p,
+  textarea {
+    color: $text-darkest;
+  }
+
+  label {
+    @include text-sub;
+    text-transform: uppercase;
+  }
+
+  p,
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    @include text-paragraph;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: pxem(35);
+    width: 100%;
+    padding: pxem(15) pxem(10);
+    border: 1px solid $border-gray;
+    border-radius: 3px;
+    box-shadow: 0;
+    transition: box-shadow 240ms $t-1;
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px $brand-blue;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: pxem(10);
+  }
+
+  textarea {
+    height: pxem(125);
+  }
+
+  .-half {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+    }
+  }
+
+  .-full {
+    @include col(12);
+  }
+
+  .-submit {
+    @include col(12);
+    margin: pxem(40) 0 pxem(70) 0;
+    text-align: center;
+
+    @include mq($from: $breakpoint-small) {
+      margin: pxem(70) 0 pxem(100) 0;
+      @include col(6);
+      @include offset(3);
+    }
+
+    button {
+      margin-bottom: pxem(25);
+    }
+  }
+}

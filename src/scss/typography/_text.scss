@@ -1,0 +1,27 @@
+.text {
+
+  .-paragraph {
+    @include text-paragraph;
+    color: $text-dark;
+  }
+
+  .-italic {
+    font-style: italic;
+  }
+
+  .-white {
+    color: $color-white;
+  }
+
+  .-black {
+    color: $color-black;
+  }
+
+  .-darkest {
+    color: $text-darkest;
+  }
+
+  .-dark {
+    color: $text-dark;
+  }
+}

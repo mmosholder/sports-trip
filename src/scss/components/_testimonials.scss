@@ -1,0 +1,37 @@
+.testimonials {
+  margin: pxem(65) 0 pxem(75) 0;
+
+  @include mq($from: $breakpoint-medium) {
+    margin: pxem(65) 0 pxem(110) 0;
+  }
+
+  .-content {
+    @include col(12);
+    margin-bottom: pxem(15);
+    text-align: center;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  h3 {
+    @include title-testimonial;
+    color: $brand-blue;
+  }
+
+  .-sub {
+    @include text-meta;
+    text-transform: uppercase;
+  }
+
+  .-title {
+    @include text-paragraph;
+  }
+
+  .-sub,
+  .-title {
+    color: $text-darkest;
+  }
+}

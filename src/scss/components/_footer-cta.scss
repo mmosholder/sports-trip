@@ -1,0 +1,31 @@
+.footer-cta {
+  margin: pxem(60) 0 pxem(120) 0;
+
+  p {
+    @include text-paragraph;
+    color: $text-darkest;
+  }
+
+  .-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  .-button {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+      @include offset(3);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      @include offset(4);
+    }
+  }
+}

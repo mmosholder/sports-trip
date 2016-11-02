@@ -1,0 +1,132 @@
+@mixin title-main {
+  @include sentinel-book;
+  font-size: pxem(35);
+  line-height: pxem(35);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(55);
+    line-height: pxem(55);
+  }
+}
+
+@mixin title-secondary {
+  @include sentinel-book;
+  font-size: pxem(25);
+  line-height: pxem(35);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(40);
+  }
+}
+
+@mixin title-tertiary {
+  @include whitney-bold;
+  font-size: pxem(15);
+  line-height: pxem(28);
+}
+
+@mixin title-event {
+  @include sentinel-medium;
+  font-size: pxem(20);
+  line-height: pxem(28);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(28);
+  }
+}
+
+@mixin title-testimonial {
+  @include sentinel-book;
+  font-size: pxem(30);
+  line-height: pxem(42);
+  font-style: italic;
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(30);
+    line-height: pxem(42);
+  }
+}
+
+@mixin title-sub {
+  @include whitney-bold;
+  font-size: pxem(13);
+  line-height: pxem(16);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(20);
+    line-height: pxem(23);
+  }
+}
+
+@mixin title-meta {
+
+}
+
+@mixin title-nav {
+  @include sentinel-semibold;
+  font-size: pxem(13);
+  line-height: pxem(15);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(18);
+    line-height: pxem(35);
+  }
+}
+
+@mixin text-paragraph {
+  @include sentinel-book;
+  font-size: pxem(18);
+  line-height: pxem(26);
+
+  @include mq($from: 1000px) {
+    @font-size: pxem(20);
+    line-height: pxem(28);
+  }
+}
+
+@mixin text-sub {
+  @include whitney-medium;
+  font-size: pxem(15);
+  line-height: pxem(35);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(20)
+  }
+}
+
+@mixin text-meta {
+  @include whitney-medium;
+  font-size: pxem(15);
+  line-height: pxem(35);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(18);
+  }
+}
+
+@mixin link-hr {
+  @include sentinel-medium;
+  font-size: pxem(14);
+  line-height: pxem(35);
+}
+
+@mixin link-paragraph {
+  @include sentinel-book;
+  font-size: pxem(18);
+  line-height: pxem(36);
+}
+
+@mixin link-footer {
+  @include whitney-medium;
+  font-size: pxem(15);
+  line-height: pxem(20);
+}
+
+@mixin link-sub {
+  @include whitney-medium;
+  font-size: pxem(15);
+
+  @include mq($from: $breakpoint-small) {
+    font-size: pxem(20)
+  }
+}

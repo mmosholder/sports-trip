@@ -1,0 +1,26 @@
+.hr-connect {
+  background-color: $header-gray;
+
+  @include mq($to: $breakpoint-medium) {
+    display: block;
+  }
+
+  .-container {
+    @include container($type: 'nav');
+  }
+
+  .row {
+    justify-content: flex-end;
+  }
+
+  a {
+    @include link-hr;
+    color: #9B9B9B;
+    padding: pxem(5) 0;
+    transition: color 240ms $t-1;
+
+    &:hover {
+      color: $brand-blue;
+    }
+  }
+}

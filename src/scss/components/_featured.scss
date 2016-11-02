@@ -1,0 +1,46 @@
+.featured {
+  margin-bottom: pxem(65);
+
+  p {
+    @include text-paragraph;
+    color: $text-darkest;
+  }
+
+  .row {
+    padding-top: pxem(35);
+    padding-bottom: pxem(5);
+    background-color: $header-gray;
+
+    @include mq($from: $breakpoint-medium) {
+      padding-top: pxem(65);
+      padding-bottom: pxem(35);
+    }
+  }
+
+  .-image {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include offset(1);
+      @include col(4);
+    }
+
+    img {
+      max-width: 60%;
+      margin-bottom: pxem(35);
+
+      @include mq($from: $breakpoint-medium) {
+        margin-bottom: 0;
+        max-width: 90%;
+      }
+    }
+  }
+
+  .-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+    }
+  }
+}

@@ -1,0 +1,99 @@
+// Colors
+$color-black:           #000000;
+$color-white:           #ffffff;
+$color-nearly-black:    #11192C;
+$color-dark-gray:       #2C3958;
+$color-light-blue:      #BBE0F7;
+$color-gray:            #7E828D;
+$footer-bg:             $color-nearly-black;
+$header-gray:           #F5F5F5;
+$border-gray:           #D8D8D8;
+
+// Brand Colors
+$brand-blue:            #047EDD;
+$brand-orange:          #FF5C3D;
+
+
+// Text Colors
+$text-black:               $color-black;
+$text-white:               $color-white;
+$text-darkest:             $color-nearly-black;
+$text-dark:                $color-dark-gray;
+$text-thick-underline:     rgba(187, 224, 247, 0.3);
+
+// Transitions
+$t-1:                   cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+// Shadows
+$nav-shadow:            0px 1px 0px 0px #047EDD;
+$card-shadow:           0px 3px 6px 0px rgba(32,31,39,0.10);
+
+// Filters
+$header-filter:          rgba(4,126,221,0.20);
+$testimonial-filter:     rgba(4,126,221,0.50);
+
+
+
+// Z-Indexes
+$z-1:                               100;
+$z-2:                               200;
+$z-3:                               300;
+$z-4:                               400;
+$z-5:                               500;
+$z-6:                               600;
+$z-7:                               700;
+$z-8:                               800;
+$z-9:                               900;
+$z-10:                              1000;
+$z-11:                              1100;
+
+// Z applied
+
+
+// Breakpoints
+$breakpoint-xsmall:    480px;
+$breakpoint-small:     768px;
+$breakpoint-medium:    992px;
+$breakpoint-large:     1024px;
+$breakpoint-xlarge:    1260px;
+$breakpoint-cutoff:    1440px;
+
+$breakpoint-map: (
+"default": 0,
+"xs":      $breakpoint-xsmall,
+"sm":      $breakpoint-small,
+"md":      $breakpoint-medium
+);
+
+// Header max width
+$header-max-width: pxem(1830);
+
+// Es page container width variables
+$es-breakpoints:
+  xs $breakpoint-xsmall 100%,
+  sm $breakpoint-small 100%,
+  md $breakpoint-medium 100%,
+  lg $breakpoint-large 900px,
+  xl $breakpoint-xlarge 1200px;
+
+// Flexboxgrid Variables
+
+// Set the number of columns you want to use on your layout.
+$grid-columns: 12 !default;
+// Set the gutter between columns.
+$gutter-width: 2.5rem !default;
+// Mobile gutter:
+$mobile-gutter-width: 1.5625rem !default;
+
+// Set a margin for the container sides.
+$outer-margin: 0 !default;
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+$breakpoints:
+  xs $breakpoint-xsmall 100%,
+  sm $breakpoint-small 100%,
+  md $breakpoint-medium 100%,
+  lg $breakpoint-large 100%,
+  xl $breakpoint-xlarge 100%;
+$flexboxgrid-max-width: 1320px !default;

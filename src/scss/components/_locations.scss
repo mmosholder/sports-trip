@@ -1,0 +1,47 @@
+.locations {
+
+  .-content {
+    @include col(12);
+
+    @include mq($from: 1000px) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  h2,
+  span {
+    color: $text-darkest;
+  }
+
+  h2 {
+    @include title-secondary;
+    @include text-heavy-underline;
+  }
+
+  span {
+    display: block;
+    @include text-paragraph;
+  }
+
+  .-locations {
+    @include col(12);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq($from: 1000px) {
+      @include offset(2);
+      @include col(10);
+    }
+  }
+
+  .-item {
+    @include col(12);
+    margin-bottom: pxem(60);
+
+    @include mq($from: 1000px) {
+      @include col(6);
+    }
+  }
+
+}

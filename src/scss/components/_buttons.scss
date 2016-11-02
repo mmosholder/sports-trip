@@ -1,0 +1,13 @@
+.button {
+
+
+  &.-orange {
+    @include button($brand-orange, $color-white, transparent);
+    width: 100%;
+    transition: background-color 240ms $t-1;
+
+    &:hover {
+      background-color: darken($brand-orange, 15%);
+    }
+  }
+}

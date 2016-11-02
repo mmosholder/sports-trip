@@ -1,0 +1,116 @@
+.benefits {
+
+  h2,
+  .-sub,
+  p {
+    color: $text-dark;
+  }
+
+  h2 span {
+    @include title-secondary;
+    @include text-heavy-underline;
+  }
+
+  .-row {
+    flex-direction: column;
+
+    @include mq($from: $breakpoint-medium) {
+      flex-direction: row;
+    }
+  }
+
+  .-step {
+    margin: 0 pxem(15) 0 0;
+    position: relative;
+
+
+    &:after {
+      content: "";
+      height: calc(100% - 30px);
+      width: 1px;
+      background-color: $color-gray;
+      position: absolute;
+      top: 40px;
+      left:45%;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      margin: 0 0 pxem(15) 0;
+
+      &:nth-of-type(3n) {
+        &:after {
+          display: none;
+        }
+      }
+
+      &:after {
+        content: "";
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: $color-gray;
+        position: absolute;
+        top: 45%;
+        left:40px;
+      }
+    }
+
+    span {
+      @include text-paragraph;
+      color: $text-darkest;
+      display: flex;
+      height: pxem(40);
+      width: pxem(40);
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid $color-gray;
+    }
+  }
+
+  .-item {
+    @include col(12);
+    display: flex;
+    padding-bottom: pxem(10);
+
+    &:nth-of-type(3n) {
+      .-step {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include span(4);
+      flex-direction: column;
+
+      &:nth-of-type(3n) {
+        .-step {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .-text {
+    flex-basis: 90%;
+
+    @include mq($from: $breakpoint-medium) {
+      flex-basis: 100%;
+      padding: 0 pxem(35) 0 0;
+    }
+
+    .-sub {
+      @include text-sub;
+      text-transform: uppercase;
+      margin-bottom: pxem(10);
+    }
+
+    p {
+      @include text-paragraph;
+      font-style: italic;
+    }
+  }
+}

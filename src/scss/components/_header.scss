@@ -1,0 +1,165 @@
+.header {
+  margin-top: pxem(70);
+
+  @include mq($from: $breakpoint-medium) {
+    margin-top: 0;
+  }
+
+  &.-simple {
+    background-color: $header-gray;
+
+    .-container {
+      background-size: 0;
+      padding-top: pxem(105);
+      padding-bottom: pxem(130);
+    }
+
+    .-filter {
+      display: none;
+    }
+
+    h1,
+    .-subtitles span,
+    .-subtitles span:after {
+      color: $text-darkest;
+    }
+  }
+
+  &.-card {
+    margin-bottom: pxem(35);
+
+    @include mq($from: $breakpoint-medium) {
+      margin-bottom: pxem(-80);
+    }
+  }
+
+  .-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: $header-filter;
+    top: 0;
+    left: 0;
+  }
+
+  .-container {
+    @include container;
+    padding-top: pxem(230);
+    padding-bottom: pxem(250);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+  }
+
+  .-row {
+    flex-direction: column;
+  }
+
+  h1 {
+    @include col(12);
+    @include title-main;
+    color: $color-white;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(7);
+      @include offset(1);
+    }
+  }
+
+  .-subtitles {
+    @include col(12);
+    display: flex;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(6);
+      @include offset(1);
+    }
+
+    span {
+      @include title-sub;
+      text-transform: uppercase;
+      color: $color-white;
+
+      &:after {
+        content: "|";
+        color: $color-white;
+        margin: 0 pxem(5);
+
+        @include mq($from: $breakpoint-medium) {
+          margin: 0 pxem(15);
+        }
+      }
+
+      &:last-of-type {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.-header-card {
+  .-content {
+    @include col(12);
+    background-color: $color-white;
+    position: relative;
+    margin-bottom: pxem(70);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(10);
+      @include offset(1);
+      padding-top: pxem(60);
+    }
+
+    h2,
+    .-text {
+      color: $text-darkest;
+    }
+
+    .-text {
+      @include text-paragraph;
+    }
+
+    h2 span {
+      @include title-secondary;
+      @include text-heavy-underline;
+    }
+
+    .-half {
+      @include col(12);
+      align-items: flex-end;
+      margin-bottom: pxem(35);
+
+      @include mq($from: $breakpoint-medium) {
+        @include col(6);
+        margin-bottom: 0;
+
+        &:first-of-type {
+          @include offset(1);
+        }
+      }
+    }
+
+    .-full {
+      @include col(12);
+    }
+
+    .-button {
+      @include col(12);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(6);
+        align-self: flex-end;
+      }
+
+      @include mq($from: $breakpoint-medium) {
+        @include col(4);
+        align-self: flex-end;
+      }
+    }
+  }
+}

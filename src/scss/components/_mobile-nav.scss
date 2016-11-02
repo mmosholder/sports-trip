@@ -1,0 +1,110 @@
+.mobile-nav-wrapper {
+  background-color: $brand-blue;
+  height: pxem(70);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: pxem(70);
+  display: none;
+  align-items: center;
+  z-index: $z-10;
+
+  @include mq($to: $breakpoint-medium) {
+    display: flex;
+  }
+
+  .-container {
+    @include container($type: 'nav');
+  }
+
+  .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div,
+  a {
+    @include title-nav;
+    color: $text-white;
+    text-transform: uppercase;
+  }
+
+  .-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.mobile-nav {
+  background-color: #006DC2;
+  height: 100%;
+  width: 100%;
+  z-index: $z-1;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+
+  .-container {
+    @include container;
+    padding-top: pxem(30);
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: pxem(5) 0;
+
+      a {
+        padding: pxem(7) 0;
+        display: block;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 45%;
+          background-color: $color-white;
+          left: pxem(-31);
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          opacity: 0;
+          transition: opacity 240ms $t-1;
+          z-index: $z-10;
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+
+      .-active {
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 45%;
+          background-color: $color-white;
+          left: pxem(-31);
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          opacity: 1;
+          transition: opacity 240ms $t-1;
+          z-index: $z-10;
+        }
+      }
+    }
+  }
+
+  a {
+    @include title-main;
+    color: $color-white;
+  }
+}

@@ -1,0 +1,80 @@
+.profiles {
+  h2,
+  .-sub {
+    color: $text-darkest;
+  }
+
+  .-sub {
+    @include text-sub;
+    text-transform: uppercase;
+  }
+
+  .-sub,
+  p {
+    color: $text-dark;
+    @include text-paragraph;
+  }
+
+  h2 {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  h2 span {
+    @include title-secondary;
+    @include text-heavy-underline;
+  }
+
+  .-profile-item {
+    @include span(12);
+    margin-bottom: pxem(85);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq($from: $breakpoint-medium) {
+      @include span(10);
+      @include offset(1);
+    }
+  }
+
+  .-image {
+    @include col(3);
+    margin-bottom: pxem(35);
+    order: 1;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(5);
+      margin-bottom: 0;
+      order: 0;
+    }
+  }
+
+  .-text {
+    @include col(12);
+    order: 2;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(5);
+      order: 0;
+    }
+
+    p,
+    .-sub {
+      @include span(10);
+    }
+
+    &.-left {
+      @include mq($from: $breakpoint-medium) {
+        p,
+        .-sub {
+          @include span(10);
+          @include offset(2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.nav {
+  box-shadow: $nav-shadow;
+
+  @include mq($to: $breakpoint-medium) {
+    display: none;
+  }
+
+  span {
+    @include title-secondary;
+  }
+
+  a {
+    @include title-nav;
+  }
+
+  span,
+  a {
+    color: $text-darkest;
+  }
+
+  .-container {
+    @include container($type: 'nav');
+  }
+
+  .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 66%;
+
+    @include mq($from: $breakpoint-xlarge) {
+      flex-basis: 50%;
+    }
+
+    li {
+      padding: 0 pxem(10);
+    }
+
+    a {
+      padding: pxem(30) 0;
+      display: block;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: $brand-blue;
+        left: 45%;
+        width: 12px;
+        height: 6px;
+        border-radius: 12px 12px 0 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 240ms $t-1;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .-active {
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background-color: $brand-blue;
+        left: 45%;
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        bottom: -6px;
+        opacity: 1;
+        transition: opacity 240ms $t-1;
+      }
+    }
+  }
+}

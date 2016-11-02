@@ -1,0 +1,9 @@
+.divider {
+  span {
+    @include span(12);
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: $border-gray;
+  }
+}

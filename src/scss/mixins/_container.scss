@@ -1,0 +1,58 @@
+@mixin container($type: default) {
+  width: 100%;
+  padding-right: pxem(25);
+  padding-left: pxem(25);
+
+  @include mq($from: $breakpoint-medium) {
+    max-width: (1200px);
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @if $type == nav {
+    max-width: pxem(2000);
+    padding-left: pxem(15);
+    padding-right: pxem(15);
+
+    @include mq($from: $breakpoint-medium) {
+      max-width: pxem(2000);
+      padding-left: pxem(50);
+      padding-right: pxem(50);
+    }
+  }
+
+  @if $type == header {
+    width: 100%;
+
+    @include mq($from: 1200px) {
+      max-width: pxem(1200);
+      padding-left: pxem(100);
+      padding-right: pxem(100);
+    }
+  }
+
+  @if $type == text {
+
+    @include mq($from: 1200px) {
+      max-width: pxem(1200);
+      padding-left: pxem(100);
+      padding-right: pxem(100);
+    }
+  }
+
+  @if $type == footer {
+    width: 100%;
+
+    @include mq($from: 1200px) {
+      max-width: pxem(1200);
+      margin: 0 auto;
+      padding-left: pxem(0);
+      padding-right: pxem(0);
+    }
+  }
+}
+
+.container {
+  @include container;
+}

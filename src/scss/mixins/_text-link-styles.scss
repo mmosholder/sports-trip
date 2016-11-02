@@ -1,0 +1,7 @@
+@mixin text-heavy-underline {
+  background-image: linear-gradient(to bottom,$text-thick-underline,$text-thick-underline);
+  background-repeat: repeat-x;
+  background-size: 2px 15px;
+  background-position: 100% 100%;
+  position: relative;
+}

@@ -1,0 +1,73 @@
+.events {
+  h2 span {
+    @include title-secondary;
+    @include text-heavy-underline;
+    color: $text-darkest;
+  }
+
+  p {
+    @include text-paragraph;
+    color: $text-darkest;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include mq($from: $breakpoint-medium) {
+
+    }
+  }
+
+  .-sub {
+    @include text-sub;
+    text-transform: uppercase;
+    color: #D8D8D8;
+
+    @include mq($from: $breakpoint-medium) {
+      padding-left: 0;
+    }
+  }
+
+  .-name {
+    @include title-event;
+    color: $brand-blue;
+
+    @include mq($from: $breakpoint-medium) {
+      padding-left: 0;
+    }
+  }
+
+  .-content {
+    @include span(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include offset(2);
+      @include col(8);
+    }
+  }
+
+  .-title {
+    @include col(12);
+    padding-left: pxem(25);
+
+    @include mq($from: $breakpoint-medium) {
+      padding-left: auto;
+    }
+  }
+
+  .-events {
+    @include col(12);
+  }
+
+  .-item {
+    @include col(12);
+    padding-top: pxem(25);
+    padding-bottom: pxem(25);
+    border-bottom: 1px solid #D8D8D8;
+
+    @include mq($from: $breakpoint-medium) {
+      @include span(12);
+    }
+  }
+}

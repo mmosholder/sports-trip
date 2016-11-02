@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 pxem(25) 0;
+}
+
+p,
+blockquote {
+  margin: 0 0 pxem(30) 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+* {
+  outline: none;
+}
+
+// Helpers
+.-center {
+  justify-content: center;
+}
+
+.-begin {
+  justify-content: flex-start;
+}
+
+.-end {
+  justify-content: flex-end;
+}

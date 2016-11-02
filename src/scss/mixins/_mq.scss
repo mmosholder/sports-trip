@@ -1,0 +1,25 @@
+@mixin mq($from: null, $to: null) {
+  $width-query: null;
+
+  @if ($from and $from > 0) {
+    $width-query: "(min-width: #{$from})";
+  }
+
+  @if ($to) {
+    $to-query: "(max-width: #{$to - 1px})";
+
+    @if ($width-query) {
+      $width-query: "#{$width-query} and #{$to-query}";
+    } @else {
+      $width-query: $to-query;
+    }
+  }
+
+  @if ($width-query) {
+    @media #{$width-query} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
